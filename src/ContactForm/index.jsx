@@ -12,7 +12,7 @@ export default class ContactForm extends Component {
 
         this.setState({ [name]: value });
     };
-    
+
     onSubmit = (e) => {
         e.preventDefault();
         if (!this.state.name || !this.state.number) {
@@ -32,29 +32,31 @@ export default class ContactForm extends Component {
         const { name, number } = this.state;
 
         return (
-              <form onSubmit={this.onSubmit}>
-                <label>
-                    Name
-                    <input 
-                        type="text" 
+              <form onSubmit={this.onSubmit} className={styles.form}>
+                <label className={styles.label}>
+                    <span className={styles.title}>Name</span>
+                    <input
+                        className={styles.input}
+                        type="text"
                         name="name"
                         value={name}
-                        onChange={this.onChange} 
+                        onChange={this.onChange}
                     />
                 </label>
-                
-                <label>
-                    Number
-                    <input 
-                        type="text" 
-                        name="number" 
+
+                <label className={styles.label}>
+                    <span className={styles.title}>Number</span>
+                    <input
+                        className={styles.input}
+                        type="text"
+                        name="number"
                         value={number}
-                        onChange={this.onChange} 
+                        onChange={this.onChange}
                     />
                 </label>
-                
-                <button type="submit"> Add new contact </button>
+
+                <button type="submit" className={styles.btn}> Add new contact </button>
             </form>
-        );        
+        );
     }
 }
